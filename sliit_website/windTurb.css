@@ -2108,20 +2108,20 @@ https://templatemo.com/tm-597-neural-glass
 /* Section 4.5: Project Documents */
 .project-documents {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 40, 0.95));
+    background: linear-gradient(135deg, rgba(147, 112, 219, 0.05) 0%, rgba(0, 255, 255, 0.03) 100%);
     position: relative;
 }
 
 .project-documents::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(224, 163, 255, 0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(147, 112, 219, 0.1), transparent);
+    animation: rotate 30s linear infinite;
+    z-index: -1;
 }
 
 .project-documents-container {
@@ -2204,9 +2204,10 @@ https://templatemo.com/tm-597-neural-glass
     border-radius: 15px;
     padding: 25px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .document-card::before {
@@ -2217,7 +2218,7 @@ https://templatemo.com/tm-597-neural-glass
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(224, 163, 255, 0.1), transparent);
-    transition: left 0.5s ease;
+    transition: left 0.6s ease;
 }
 
 .document-card:hover::before {
@@ -2225,9 +2226,10 @@ https://templatemo.com/tm-597-neural-glass
 }
 
 .document-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(224, 163, 255, 0.4);
-    box-shadow: 0 15px 40px rgba(224, 163, 255, 0.2);
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(224, 163, 255, 0.5);
+    box-shadow: 0 20px 50px rgba(224, 163, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .document-icon {
@@ -2235,6 +2237,14 @@ https://templatemo.com/tm-597-neural-glass
     margin-bottom: 20px;
     color: #e0a3ff;
     text-shadow: 0 0 15px rgba(224, 163, 255, 0.4);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.document-card:hover .document-icon {
+    transform: scale(1.1) rotate(5deg);
+    text-shadow: 0 0 25px rgba(224, 163, 255, 0.8);
+    color: #ff69b4;
 }
 
 .document-card h4 {
@@ -2256,13 +2266,31 @@ https://templatemo.com/tm-597-neural-glass
 }
 
 .action-link {
-    padding: 8px 16px;
-    border-radius: 8px;
+    padding: 10px 18px;
+    border-radius: 12px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.action-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.action-link:hover::before {
+    left: 100%;
 }
 
 .action-link.view {
@@ -2274,7 +2302,8 @@ https://templatemo.com/tm-597-neural-glass
 .action-link.view:hover {
     background: rgba(0, 255, 255, 0.2);
     border-color: rgba(0, 255, 255, 0.5);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 .action-link.download {
@@ -2286,7 +2315,8 @@ https://templatemo.com/tm-597-neural-glass
 .action-link.download:hover {
     background: rgba(255, 105, 180, 0.2);
     border-color: rgba(255, 105, 180, 0.5);
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Responsive adjustments for Project Documents */
