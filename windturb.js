@@ -28,6 +28,9 @@ https://templatemo.com/tm-597-neural-glass
 
 */
 
+// Theme detection
+        const isLightGreenTheme = document.body.classList.contains('theme-light-green');
+
 // Mobile menu functionality
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileNav = document.querySelector('.mobile-nav');
@@ -128,10 +131,10 @@ https://templatemo.com/tm-597-neural-glass
         setInterval(() => {
             neuralLines.forEach((line, index) => {
                 setTimeout(() => {
-                    line.style.opacity = '1';
+                    line.style.opacity = isLightGreenTheme ? '0.6' : '1';
                     line.style.transform = 'scaleX(1.2)';
                     setTimeout(() => {
-                        line.style.opacity = '0.2';
+                        line.style.opacity = isLightGreenTheme ? '0.25' : '0.2';
                         line.style.transform = 'scaleX(0.5)';
                     }, 200);
                 }, index * 300);
@@ -166,8 +169,10 @@ https://templatemo.com/tm-597-neural-glass
             }).onfinish = () => particle.remove();
         }
 
-        // Generate quantum particles
-        setInterval(createQuantumParticle, 1500);
+        // Generate quantum particles (skip in light theme or slow down significantly)
+        if (!isLightGreenTheme) {
+            setInterval(createQuantumParticle, 1500);
+        }
 
         // Intersection Observer for animations
         const observerOptions = {
@@ -193,18 +198,32 @@ https://templatemo.com/tm-597-neural-glass
         });
 
         // Form submission effect
-        document.querySelector('.submit-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            this.innerHTML = 'TRANSMITTING...';
-            this.style.background = 'linear-gradient(45deg, #8000ff, #00ffff)';
-            
-            setTimeout(() => {
-                this.innerHTML = 'TRANSMISSION COMPLETE';
-                this.style.background = 'linear-gradient(45deg, #00ff00, #00ffff)';
-                
-                setTimeout(() => {
-                    this.innerHTML = 'TRANSMIT TO MATRIX';
-                    this.style.background = 'linear-gradient(45deg, #00ffff, #ff0080)';
-                }, 2000);
-            }, 1500);
-        });
+        const submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isLightGreenTheme) {
+                    this.innerHTML = 'SENDING...';
+                    this.style.background = 'linear-gradient(45deg, #86efac, #10b981)';
+                    setTimeout(() => {
+                        this.innerHTML = 'SENT';
+                        this.style.background = 'linear-gradient(45deg, #a7f3d0, #34d399)';
+                        setTimeout(() => {
+                            this.innerHTML = 'SEND MESSAGE';
+                            this.style.background = 'linear-gradient(135deg, #86efac, #10b981)';
+                        }, 2000);
+                    }, 1200);
+                } else {
+                    this.innerHTML = 'TRANSMITTING...';
+                    this.style.background = 'linear-gradient(45deg, #8000ff, #00ffff)';
+                    setTimeout(() => {
+                        this.innerHTML = 'TRANSMISSION COMPLETE';
+                        this.style.background = 'linear-gradient(45deg, #00ff00, #00ffff)';
+                        setTimeout(() => {
+                            this.innerHTML = 'TRANSMIT TO MATRIX';
+                            this.style.background = 'linear-gradient(45deg, #00ffff, #ff0080)';
+                        }, 2000);
+                    }, 1500);
+                }
+            });
+        }

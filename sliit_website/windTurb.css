@@ -1545,6 +1545,22 @@ https://templatemo.com/tm-597-neural-glass
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(224, 163, 255, 0.3);
 }
+/* Light theme: replace purple hover/glow on team cards */
+body.theme-light-green .core-system-card::before {
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.12), transparent);
+}
+body.theme-light-green .core-system-card:hover {
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+body.theme-light-green .team-member-image {
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+body.theme-light-green .team-member-image:hover {
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
 
 .core-system-icon {
     font-size: 3rem;
@@ -1966,6 +1982,20 @@ https://templatemo.com/tm-597-neural-glass
  .footer-design a:hover {
      color: #ff69b4;
      text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+}
+/* Light theme: About Us background - replace purple with green/blue */
+body.theme-light-green .core-systems {
+    background: linear-gradient(180deg, #ffffff 0%, #ecfdf5 100%);
+}
+body.theme-light-green .core-systems::before {
+    background: conic-gradient(from 0deg, transparent, rgba(16, 185, 129, 0.08), rgba(56, 189, 248, 0.08), transparent);
+}
+body.theme-light-green .core-systems .section-subtitle {
+    color: #475569;
+}
+/* Light theme: team member names */
+body.theme-light-green .core-system-card h3 {
+    color: #065f46;
 }
 /* Mobile Responsiveness */
  @media (max-width: 1024px) {
@@ -2571,3 +2601,167 @@ https://templatemo.com/tm-597-neural-glass
         height: 30px;
     }
 }
+
+/* Light Green Theme Overrides */
+body.theme-light-green {
+    background: #f6faf7;
+    color: #065f46;
+}
+body.theme-light-green .neural-background {
+    background: radial-gradient(circle at 20% 80%, rgba(163, 230, 190, 0.8) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(209, 250, 229, 0.9) 0%, transparent 50%), radial-gradient(circle at 50% 60%, rgba(134, 239, 172, 0.7) 0%, transparent 50%), linear-gradient(135deg, #ffffff 0%, #f6faf7 60%, #ecfdf5 100%);
+}
+body.theme-light-green header {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(16, 185, 129, 0.25);
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+body.theme-light-green header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+body.theme-light-green .logo {
+    background: linear-gradient(45deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+body.theme-light-green .logo-icon { filter: drop-shadow(0 0 8px #34d399); }
+body.theme-light-green .nav-links a { color: #065f46; }
+body.theme-light-green .nav-links a.active { color: #065f46; background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(5,150,105,0.08)); border: 1px solid rgba(16,185,129,0.35); box-shadow: 0 0 16px rgba(16,185,129,0.25), inset 0 1px 0 rgba(255,255,255,0.6); }
+body.theme-light-green .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #86efac, #34d399, #10b981, #86efac);
+    background-size: 400% 400%;
+    border-radius: 17px;
+    z-index: -2;
+    animation: borderGlow 3s ease infinite;
+}
+body.theme-light-green .mobile-nav { background: rgba(255,255,255,0.98); border-color: rgba(16,185,129,0.25); }
+body.theme-light-green .mobile-nav a { color: #065f46; }
+body.theme-light-green .mobile-nav a:hover { color: #047857; }
+body.theme-light-green .mobile-nav a.active {
+    background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.15));
+    color: #059669;
+    border: 1px solid rgba(16,185,129,0.4);
+    box-shadow: 0 0 25px rgba(16,185,129,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
+    text-shadow: 0 0 8px rgba(16,185,129,0.35);
+}
+
+body.theme-light-green .glass { background: rgba(255,255,255,0.7); border: 1px solid rgba(16,185,129,0.15); }
+body.theme-light-green .glass-strong { background: rgba(255,255,255,0.85); border: 1px solid rgba(16,185,129,0.25); }
+
+body.theme-light-green .hero h1 { background: linear-gradient(135deg, #10b981 0%, #34d399 40%, #059669 80%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+body.theme-light-green .hero-subtitle { color: #059669; }
+body.theme-light-green .hero-subtitle::before,
+body.theme-light-green .hero-subtitle::after { background: linear-gradient(90deg, transparent, #34d399, transparent); }
+body.theme-light-green .hero-description p { color: #334155; }
+body.theme-light-green .hero-stat { background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(52,211,153,0.06)); border-color: rgba(16,185,129,0.2); }
+body.theme-light-green .hero-stat-number { color: #059669; text-shadow: 0 0 10px rgba(16,185,129,0.25); }
+body.theme-light-green .intro-paragraph p { color: #334155; text-shadow: none; }
+body.theme-light-green .intro-paragraph p:first-child { color: #059669; text-shadow: none; }
+
+body.theme-light-green .cta-button { background: linear-gradient(135deg, #86efac, #10b981); color: #064e3b; box-shadow: 0 4px 15px rgba(16,185,129,0.2); }
+body.theme-light-green .cta-button.secondary { border-color: #10b981; color: #059669; }
+
+body.theme-light-green .section-title { color: #059669; }
+body.theme-light-green .section-title::after { background: linear-gradient(90deg, #34d399, #86efac); }
+
+body.theme-light-green .feature-content { border-color: rgba(16,185,129,0.25); }
+body.theme-light-green .feature-content h3 { color: #065f46; text-shadow: none; }
+body.theme-light-green .feature-content p { color: #374151; }
+body.theme-light-green .feature-icon { background: linear-gradient(45deg, #10b981, #34d399); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+body.theme-light-green .content-box p { color: #334155; }
+body.theme-light-green .highlight-card h3 { color: #059669; text-shadow: none; }
+body.theme-light-green .highlight-card p { color: #374151; }
+
+body.theme-light-green .timeline-line { background: linear-gradient(180deg, #34d399, #10b981, #a7f3d0); }
+body.theme-light-green .timeline-content { background: rgba(255,255,255,0.85); border-color: rgba(16,185,129,0.25); }
+body.theme-light-green .timeline-year { color: #059669; text-shadow: none; }
+body.theme-light-green .timeline-dot { background: linear-gradient(135deg, #34d399, #10b981); }
+body.theme-light-green .timeline-content h4 { color: #065f46; }
+body.theme-light-green .timeline-content p { color: #374151; }
+
+body.theme-light-green .project-documents { background: linear-gradient(135deg, rgba(209,250,229,0.3) 0%, rgba(240,253,244,0.6) 100%); }
+body.theme-light-green .document-card { background: rgba(255,255,255,0.8); border-color: rgba(16,185,129,0.2); }
+body.theme-light-green .document-icon { color: #10b981; text-shadow: 0 0 12px rgba(16,185,129,0.35); }
+body.theme-light-green .document-card h4 { color: #065f46; }
+body.theme-light-green .action-link.view { color: #059669; border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.12); }
+body.theme-light-green .action-link.download { color: #047857; border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.08); }
+body.theme-light-green .action-link.download:hover { background: rgba(16,185,129,0.2); border-color: rgba(16,185,129,0.5); box-shadow: 0 0 25px rgba(16,185,129,0.4); color: #065f46; }
+body.theme-light-green .document-section .section-heading { color: #059669; text-shadow: none; }
+body.theme-light-green .project-documents .section-subtitle { color: #475569; }
+body.theme-light-green .document-card::before { background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.12), transparent); }
+body.theme-light-green .document-card:hover { border-color: rgba(56, 189, 248, 0.45); box-shadow: 0 20px 50px rgba(56, 189, 248, 0.25); background: rgba(255,255,255,0.9); }
+
+body.theme-light-green .contact-info h3 { color: #059669; }
+body.theme-light-green .contact-text h4 { color: #059669; }
+body.theme-light-green .submit-btn { background: linear-gradient(135deg, #86efac, #10b981); color: #064e3b; }
+/* Light theme: Contact form text colors */
+body.theme-light-green .contact-form h3 { color: #065f46; }
+body.theme-light-green .contact-form .form-group label { color: #059669; }
+body.theme-light-green .contact-form .form-group input,
+body.theme-light-green .contact-form .form-group textarea { color: #0f172a; }
+body.theme-light-green .contact-form .form-group input::placeholder,
+body.theme-light-green .contact-form .form-group textarea::placeholder { color: #64748b; }
+body.theme-light-green .team-member-role { color: #10b981; }
+body.theme-light-green .team-member-email { color: #047857; }
+
+body.theme-light-green footer { background: rgba(255,255,255,0.7); border-top-color: rgba(16,185,129,0.25); }
+body.theme-light-green .footer-links a:hover { color: #059669; text-shadow: 0 0 10px rgba(16,185,129,0.25); }
+body.theme-light-green .footer-links a::after { background: linear-gradient(90deg, #34d399, #86efac); }
+body.theme-light-green .footer-design a { color: #059669; }
+
+/* Light theme adjustments for floating shapes and neural lines */
+body.theme-light-green .shape { border-color: rgba(16, 185, 129, 0.35); }
+body.theme-light-green .shape:nth-child(1) { border-color: rgba(134, 239, 172, 0.5); }
+body.theme-light-green .shape:nth-child(2) { border-color: rgba(52, 211, 153, 0.45); }
+body.theme-light-green .shape:nth-child(3) { border-color: rgba(16, 185, 129, 0.45); }
+body.theme-light-green .shape:nth-child(4) { background: linear-gradient(45deg, rgba(16, 185, 129, 0.12), transparent); }
+
+body.theme-light-green .neural-line { background: linear-gradient(90deg, transparent, #34d399, transparent); }
+body.theme-light-green .neural-line:nth-child(1) { background: linear-gradient(90deg, transparent, #86efac, transparent); }
+body.theme-light-green .neural-line:nth-child(2) { background: linear-gradient(90deg, transparent, #34d399, transparent); }
+body.theme-light-green .neural-line:nth-child(3) { background: linear-gradient(90deg, transparent, #10b981, transparent); }
+
+/* Tabs - convert pink/purple to green theme */
+body.theme-light-green .tab-button {
+    background: rgba(16, 185, 129, 0.06);
+    border-color: rgba(16, 185, 129, 0.35);
+    color: #047857;
+}
+body.theme-light-green .tab-button:hover {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+}
+body.theme-light-green .tab-button.active {
+    background: linear-gradient(135deg, #86efac, #10b981);
+    color: #064e3b;
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+}
+
+/* Research cards - remove purple glows/borders */
+body.theme-light-green .problem-card { border-color: rgba(16, 185, 129, 0.25); box-shadow: 0 8px 32px rgba(16, 185, 129, 0.15); }
+body.theme-light-green .problem-card::before { background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.12), transparent); }
+body.theme-light-green .problem-card:hover { border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25); }
+body.theme-light-green .card-accent { background: linear-gradient(180deg, #34d399, #10b981); box-shadow: 0 0 15px rgba(16, 185, 129, 0.45); }
+body.theme-light-green .problem-card h3 { color: #065f46; }
+body.theme-light-green .problem-card p { color: #334155; }
+
+/* Tools & Technologies (hexagon cards) - make text readable and tint blue/green */
+body.theme-light-green .hexagon:nth-child(odd) .hexagon-inner {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(16, 185, 129, 0.12));
+    border: 1px solid rgba(56, 189, 248, 0.35);
+}
+body.theme-light-green .hexagon:nth-child(even) .hexagon-inner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(56, 189, 248, 0.16));
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+body.theme-light-green .hexagon h4 { color: #065f46; text-shadow: none; }
+body.theme-light-green .hexagon p { color: #374151; }
